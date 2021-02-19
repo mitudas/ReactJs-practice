@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+   class BbcNews extends React.Component{
+    constructor(props) {
+    super(props);
+    this.state = {totaleditcount:0};
+     
+  }
+   edit()
+   {
+    alert("edit button clicked")
+    this.setState({totaleditcount:this.state.totaleditcount+1
+
+  });
+   }
+   delect()
+   {
+ alert("delect button clicked")
+   }
+
+   render(){
+   const props=this.props;
+   return(
+   <div className="containertwo">
+   
+    <span>{props.children}</span>
+    <div className="action">
+      <button className="edit" onClick={() =>this.edit()}>Edit</button>
+      <button className="delect" onClick={this.delect}>Delect</button>
+    </div>
+   
+    <p>Total edit count{this.state.totaleditcount}</p>
+     
+ </div>
+   )
+ }
+
+ }
+   
+
+      ReactDOM.render(
+      <div className="container">
+       <BbcNews >Bishakha Dushto Na Doibyo</BbcNews >
+       <BbcNews >Bishakha Dushto Na Doibyo</BbcNews >
+
+       </div>,
+        document.getElementById('root')
+      );
+
+    </script>
+   
+  </body>
+</html>
