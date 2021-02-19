@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      function HelloWorld(props){
+
+      
+
+      return (
+
+      <div>
+      <h1>Hi {props.name}</h1>
+       
+       < MyAgeClass  age={props.age} adult="No" location="Dhaka" profession="Engineering"/> 
+      </div>
+    );
+    
+    }
+ 
+
+    class MyAgeClass extends React.Component{
+    render()
+    {
+     var props= this.props
+      return (
+      <h2> My age: {props.age}. Adult?:{props.adult}. Location:{props.location}. Profession:{props.profession}</h2>
+      )
+    }
+  }
+   
+
+      ReactDOM.render(
+      <div>
+        < HelloWorld name="shimanto" age="11"/>
+      
+        < HelloWorld name="saikat" age="15" / >
+    
+        
+        
+      </div>,
+        document.getElementById('root')
+      );
+
+    </script>
+   
+  </body>
+</html>
