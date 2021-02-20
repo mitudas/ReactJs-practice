@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" type="text/css" href=" index.css">
+  </head>
+
+  <body class="bodycolor">
+    <div id="root"></div>
+    <script type="text/babel">
+
+      const title="Beauty Tips";
+      const date=new Date();
+      const dateName=date.getDate();
+      const dateMonth=date.getMonth();
+      const dateYear=date.getFullYear();
+      const topic="Excellent tips to make your nail paint last longer";
+      const details="Every woman loves pretty and colourful nails.Gorgeous nails are every girl's dream. And every year, more and more variety of manicure types start to trend ranging from matte nails to classic French manicure, nail art and so much more. But, even if it's a simple nail paint, you'd hate it if it starts chipping off in a day or two. This could be due to constant washing of hands or household chores like cooking or washing vessels. So, in order to make sure that your nail polish stays intact, there are a few things that can help.";
+       
+      ReactDOM.render(
+      
+      <div>
+        <h1 class="mytitle">{title}</h1>
+         <p class="mydate"> {dateName+"/"+dateMonth+"/"+dateYear}</p>
+        <h2 class="mytopic"> {topic} </h2>
+
+       
+        <p class="mydetails">{details}</p>
+
+         </div>
+        ,
+        document.getElementById('root')
+      );
+
+    </script>
+   
+  </body>
+</html>
